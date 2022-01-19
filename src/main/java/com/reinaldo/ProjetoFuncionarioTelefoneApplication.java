@@ -29,13 +29,15 @@ public class ProjetoFuncionarioTelefoneApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		Telefone t1 = new Telefone(null, "995730262", "Claro");
+		Telefone t2 = new Telefone(null, "32952891", "Oi");
+		Telefone t3 = new Telefone(null, "998391044", "Tim");	
 				
 		Funcionario f1 = new Funcionario(null, "Reinaldo", "05948885712", "2020/12/12");
 		Funcionario f2 = new Funcionario(null, "João", "04829958234", "2020/12/12");
 		
-		Telefone t1 = new Telefone(null, "995730262", "Claro");
-		Telefone t2 = new Telefone(null, "32952891", "Oi");
-		Telefone t3 = new Telefone(null, "998391044", "Tim");		
+			
 		
 		f1.getTelefones().addAll(Arrays.asList(t1, t2));
 		f2.getTelefones().addAll(Arrays.asList(t3));
@@ -44,9 +46,9 @@ public class ProjetoFuncionarioTelefoneApplication implements CommandLineRunner{
 		t2.getFuncionarios().addAll(Arrays.asList(f1));
 		t3.getFuncionarios().addAll(Arrays.asList(f2));
 		
-		funcionarioRepository.saveAll(Arrays.asList(f1, f2));
-		telefoneRepository.saveAll(Arrays.asList(t1, t2, t3));
 		
+		telefoneRepository.saveAll(Arrays.asList(t1, t2, t3));
+		funcionarioRepository.saveAll(Arrays.asList(f1, f2));
 				
 	}
 
